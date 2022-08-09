@@ -2,9 +2,7 @@
 module VaultType::Vault {
     use aptos_framework::coin;
     use aptos_framework::coin::Coin;
-    
     use std::signer;
-
     use aptos_framework::type_info::{Self};
 
     struct VaultStore<phantom CoinType> has key, store {
