@@ -125,8 +125,10 @@ module VaultType::Vault {
     {
         // Get contract address
         let type_info = type_info::type_of<VaultStatus>();
+
         // Get account address
         let addr = type_info::account_address(&type_info);
+
         if(exists<VaultStatus>(addr)) {
             return borrow_global<VaultStatus>(addr).is_paused
         };
@@ -137,6 +139,7 @@ module VaultType::Vault {
 }
 
 // Tests >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 #[test_only]
 module VaultType::VaultTest {
     // Uses >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
